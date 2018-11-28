@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -16,7 +16,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password_digest',
+        'phone',
+        'address',
+        'role_id',
     ];
 
     /**
@@ -25,6 +30,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password_digest',
     ];
+
+    public $remember_token = false;
+
+    public function getAuthPassword()
+    {
+        return $this->password_digest;
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
