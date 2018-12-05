@@ -15,6 +15,16 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::get('login', 'LoginController@showLoginForm')->name('login');
     Route::post('login', 'LoginController@login');
     Route::post('logout', 'LoginController@logout')->name('logout');
+
 });
 
-Route::get('/', 'HomeController@index')->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', 'HomeController@index');
+    
+    Route::resource('store', 'StoreController');
+});
+
+Route::group(['namespace' => 'Ajax'], function () {
+    Route::post('/ajax/block-store', 'StoreController@blockManyStore')->name('store.block_many_store');
+    Route::post('/ajax/active-store', 'StoreController@activeManyStore')->name('store.active_many_store');
+});

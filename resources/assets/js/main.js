@@ -336,3 +336,91 @@
     treeMenu();
     hide();
 })(jQuery);
+
+$(document).ready(function(){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        beforeSend: function () {
+            showAnimationLoader();
+        },
+        complete: function () {
+            hideAnimationLoader();
+        },
+    });
+
+    $(document).on('click', '.checkbox-all', function () {
+        var check = $(this).prop('checked');
+
+        $('.checkbox-element').each(function () {
+            $(this).prop('checked', check);
+        });
+    });
+
+    $(document).on('click', '.checkbox-element', function () {
+        var check = 0;
+
+        $('.checkbox-element').each(function () {
+            if ($(this).prop('checked')) {
+                check ++;
+            }
+        });
+
+        if (check == 0 || check != $('.checkbox-element').length) {
+            $(document).find('.checkbox-all').prop('checked', false);
+        } else if (check == $('.checkbox-element').length) {
+            $(document).find('.checkbox-all').prop('checked', true);
+        }
+    });
+
+    $('.block-store-all, .active-store-all').on('click', function () {
+        var dataId = [];
+        var url = $(this).data('url');
+        var msg = $(this).data('msg');
+
+        $('.checkbox-element').each(function () {
+            if ($(this).prop('checked')) {
+                dataId.push($(this).val());
+            }
+        });
+
+        if (!dataId.length) {
+            alertWarning({message: Lang.get('lang.message.no_select')});
+
+            return false;
+        }
+
+        confirmInfo({message: msg}, function () {
+            $.ajax({
+                url: url,
+                method: 'POST',
+                data: {
+                    dataId: dataId
+                }
+            }).done(function (data) {
+                if (data.success) {
+                    alertSuccess({message: data.message}, function () {
+                        location.reload();
+                    });
+                } else {
+                    alertDanger({message: data.message}, function () {
+                        location.reload();
+                    });
+                }
+            });
+        });
+    });
+});
+
+function showAnimationLoader() {
+    $('#process-loader').show();
+    $('body').append('<div class="modal-backdrop disable-background fade in"></div>');
+    $('body').css('overflow', 'hidden');
+}
+
+function hideAnimationLoader() {
+    $('#process-loader').hide();
+    $('.disable-background').remove();
+    $('body').css('overflow', '');
+}
