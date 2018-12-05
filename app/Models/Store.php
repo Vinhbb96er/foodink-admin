@@ -17,4 +17,18 @@ class Store extends Model
         'description',
         'status',
     ];
+
+    protected $appends = [
+        'status_text',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function getStatusTextAttribute()
+    {
+        return trans('lang.store.status.' . array_flip(config('setting.store.status'))[$this->status]);
+    }
 }

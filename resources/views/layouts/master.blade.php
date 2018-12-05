@@ -3,5 +3,10 @@
         <div class="col-md-12">
             @yield('content')   
         </div>
-    </div> 
+    </div>
+    <div class="modal fade in" id="process-loader">
+        <section>
+            <div class="loading-spiner"></div>
+        </section>
+    </div>
 @include ('layouts.footer')

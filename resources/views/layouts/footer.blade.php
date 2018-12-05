@@ -18,6 +18,8 @@
         {{ Html::script(asset('asset/js/bootstrap.min.js')) }}
         {{ Html::script(asset('asset/js/plugins/moment.min.js')) }}
         {{ Html::script(asset('asset/js/plugins/jquery.nicescroll.js')) }}
+        {{ Html::script(asset('vendor/sweetalert/dist/sweetalert.min.js')) }}
+        {{ Html::script(asset('asset/js/alert.js')) }}
         {{ Html::script(asset('asset/js/main.js')) }}
   </body>
 </html>
