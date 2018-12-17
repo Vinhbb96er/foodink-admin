@@ -12,11 +12,12 @@ return [
      * ],
      */
     'messages' => [
-        'lang'
+        'lang',
+        'validation',
     ],
 
     /*
      * The default path to use for the generated javascript.
      */
-    'path' => public_path('messages.js'),
+    'path' => public_path('asset/js/messages.js'),
 ];

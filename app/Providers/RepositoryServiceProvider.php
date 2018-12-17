@@ -27,5 +27,15 @@ class RepositoryServiceProvider extends ServiceProvider
             'App\Repositories\Store\StoreInterface',
             'App\Repositories\Store\StoreRepository'
         );
+
+        $this->app->bind(
+            'App\Repositories\Shipper\ShipperInterface',
+            'App\Repositories\Shipper\ShipperRepository'
+        );
+
+        $this->app->bind(
+            'App\Repositories\Shipper\UserInterface',
+            'App\Repositories\Shipper\UserRepository'
+        );
     }
 }

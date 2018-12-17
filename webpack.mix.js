@@ -23,4 +23,5 @@ mix.webpackConfig({
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .copyDirectory('resources/assets/', 'public/asset')
-   .copyDirectory('node_modules/sweetalert', 'public/vendor/sweetalert');
+   .copyDirectory('node_modules/sweetalert', 'public/vendor/sweetalert')
+   .copy('node_modules/jquery-validation/dist/jquery.validate.min.js', 'public/vendor/jquery-validation');   

@@ -10,6 +10,7 @@
     {{ Html::style(asset('asset/css/plugins/animate.min.css')) }}
     {{ Html::style(asset('asset/css/plugins/font-awesome.min.css')) }}
     {{ Html::style(asset('asset/css/style.css')) }}
+    @stack('css')
 </head>
 
  <body id="mimin" class="dashboard">
@@ -45,7 +46,7 @@
                         {{ Auth::user()->name }}
                 </span></li>
                   <li class="dropdown avatar-dropdown">
-                   <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+                   <img src="/asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
                      <li><a href="#"><span class="fa fa-user"></span> My Profile</a></li>
                      <li role="separator" class="divider"></li>
@@ -82,7 +83,7 @@
             <div class="panel box-shadow-none content-header">
                 <div class="panel-body">
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">{{ isset($title) ? $title : trans('lang.manage') }}</h3>
+                        <h3 class="animated fadeInLeft">@yield('title_page')</h3>
                     </div>
                 </div>
             </div>

@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Store::class);
     }
+
+    public function setPasswordDigestAttribute($value)
+    {
+        $this->attributes['password_digest'] = bcrypt($value);
+    }
 }

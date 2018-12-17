@@ -22,9 +22,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index');
     
     Route::resource('store', 'StoreController');
+    Route::resource('shipper', 'ShipperController');
 });
 
 Route::group(['namespace' => 'Ajax'], function () {
     Route::post('/ajax/block-store', 'StoreController@blockManyStore')->name('store.block_many_store');
     Route::post('/ajax/active-store', 'StoreController@activeManyStore')->name('store.active_many_store');
+
+    Route::post('/ajax/block-shipper', 'ShipperController@blockManyShipper')->name('shipper.block_many_shipper');
+    Route::post('/ajax/active-shipper', 'ShipperController@activeManyShipper')->name('shipper.active_many_shipper');
 });

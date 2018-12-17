@@ -11,4 +11,18 @@ class Shipper extends Model
         'identity_number',
         'status',
     ];
+
+    protected $appends = [
+        'status_text',
+    ];
+
+    public function info()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function getStatusTextAttribute()
+    {
+        return trans('lang.shipper.status.' . array_flip(config('setting.shipper.status'))[$this->status]);
+    }
 }

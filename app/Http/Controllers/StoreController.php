@@ -23,7 +23,7 @@ class StoreController extends Controller
     public function index()
     {
         try {
-            $stores = $this->storeRepository->paginate(10);
+            $stores = $this->storeRepository->getAllStores();
 
             return view('stores.index', compact('stores'));
         } catch (Exception $e) {

@@ -18,4 +18,9 @@ class StoreRepository extends BaseRepository implements StoreInterface
             ->where('status', '!=', $status)
             ->update(['status' => $status]);
     }
+
+    public function getAllStores($paginate = 10)
+    {
+        return $this->model->with('owner')->orderBy('created_at', 'desc')->paginate($paginate);
+    }
 }

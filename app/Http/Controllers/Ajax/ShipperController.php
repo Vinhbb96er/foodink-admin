@@ -4,19 +4,19 @@ namespace App\Http\Controllers\Ajax;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\Store\StoreRepository;
+use App\Repositories\Shipper\ShipperRepository;
 use DB, Exception;
 
-class StoreController extends Controller
+class ShipperController extends Controller
 {
-    protected $storeRepository;
+    protected $shipperRepository;
 
-    public function __construct (StoreRepository $storeRepository)
+    public function __construct (ShipperRepository $shipperRepository)
     {
-        $this->storeRepository = $storeRepository;
+        $this->shipperRepository = $shipperRepository;
     }
 
-    public function blockManyStore(Request $request)
+    public function blockManyShipper(Request $request)
     {
         if (!$request->ajax()) {
             return response()->json([
@@ -27,16 +27,18 @@ class StoreController extends Controller
         DB::beginTransaction();
 
         try {
-            $this->storeRepository->updateStatus($request->dataId, config('setting.store.status.block'));
+            $shipperIds = $request->dataId;
+            $this->shipperRepository->updateStatus($shipperIds, config('setting.shipper.status.block'));
 
             $result = true;
-            $message = trans('lang.message.block_all_store_success');
+            $message = trans('lang.message.block_all_shipper_success');
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
             report($e);
             $result = false;
-            $message = trans('lang.message.block_all_store_failed');
+            $message = trans('lang.message.block_all_shipper_failed');
+            dd($e);
         }
 
         return response()->json([
@@ -45,7 +47,7 @@ class StoreController extends Controller
         ]);
     }
 
-    public function activeManyStore(Request $request)
+    public function activeManyShipper(Request $request)
     {
         if (!$request->ajax()) {
             return response()->json([
@@ -56,16 +58,17 @@ class StoreController extends Controller
         DB::beginTransaction();
 
         try {
-            $this->storeRepository->updateStatus($request->dataId, config('setting.store.status.accepted'));
+            $this->shipperRepository->updateStatus($request->dataId, config('setting.shipper.status.offline'));
 
             $result = true;
-            $message = trans('lang.message.active_all_store_success');
+            $message = trans('lang.message.active_all_shipper_success');
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
             report($e);
             $result = false;
-            $message = trans('lang.message.active_all_store_failed');
+            $message = trans('lang.message.active_all_shipper_failed');
+            dd($e);
         }
 
         return response()->json([
