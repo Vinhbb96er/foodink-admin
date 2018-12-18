@@ -20,6 +20,8 @@
         {{ Html::script(asset('asset/js/plugins/jquery.nicescroll.js')) }}
         {{ Html::script(asset('vendor/sweetalert/dist/sweetalert.min.js')) }}
         {{ Html::script(asset('asset/js/alert.js')) }}
+        {{ Html::script(asset('asset/js/messages.js')) }}
         {{ Html::script(asset('asset/js/main.js')) }}
+        @stack('js')
   </body>
 </html>

@@ -22,9 +22,9 @@ class Store extends Model
         'status_text',
     ];
 
-    public function user()
+    public function owner()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function getStatusTextAttribute()

@@ -350,6 +350,8 @@ $(document).ready(function(){
         },
     });
 
+    $('.alert-messages-block').delay(10000).hide(300);
+
     $(document).on('click', '.checkbox-all', function () {
         var check = $(this).prop('checked');
 
@@ -374,7 +376,7 @@ $(document).ready(function(){
         }
     });
 
-    $('.block-store-all, .active-store-all').on('click', function () {
+    $('.block-all, .active-all').on('click', function () {
         var dataId = [];
         var url = $(this).data('url');
         var msg = $(this).data('msg');

@@ -40,17 +40,6 @@ audio {
 
 code {text-align: left !important;}
 
-input[type='text'] {
-  border: 1px solid #ddd;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 0px;
-  padding: 10px;
-  border-radius: 0px !important;
-}
-
 select{
   border-radius: 0px !important;
   border:1px solid #ddd;
@@ -6636,4 +6625,30 @@ ul li a:focus {
 
 .modal-backdrop.in {
     opacity: 0.8;
+}
+
+.input-block {
+    overflow: hidden;
+    margin-bottom: 0px !important;
+}
+
+.error-area {
+    height: 27px;
+    color: #ff0000;
+}
+
+.content-block {
+    padding: 40px 30px 30px 30px !important;
+}
+
+.errors-area {
+    height: 30px;
+}
+
+.btn-create-group {
+    margin-top: 20px;
+}
+
+a.btn:hover {
+    font-weight: normal !important;
 }
