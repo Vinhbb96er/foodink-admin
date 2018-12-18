@@ -23,8 +23,8 @@
                 <span class="middle"></span>
                 <span class="bottom"></span>
               </div>
-                <a href="index.html" class="navbar-brand"> 
-                 <b>MIMIN</b>
+                <a href="{{ route('home') }}" class="navbar-brand"> 
+                 <b>Foodink Admin</b>
                 </a>
 
               <ul class="nav navbar-nav search-nav">

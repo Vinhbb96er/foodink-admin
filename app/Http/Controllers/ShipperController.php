@@ -93,9 +93,15 @@ class ShipperController extends Controller
      */
     public function show($id)
     {
-        $shipper = $this->shipperRepository->getShipperDetail($id);
+        try {
+            $shipper = $this->shipperRepository->getShipperDetail($id);
+            
+            return view('shippers.edit', compact('shipper'));
+        } catch (Exception $e) {
+            report($e);
+            abort(404);
+        }
 
-        return view('shippers.edit', compact('shipper'));
     }
 
     /**

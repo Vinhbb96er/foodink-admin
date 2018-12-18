@@ -35,8 +35,6 @@ return [
     'shipper_name' => 'Shipper name',
     'phone' => 'Phone',
     'add' => 'Add',
-    'manager_store' => 'Manager Store',
-    'manager_shipper' => 'Manager Shipper',
     'create_shipper' => 'Register shipper',
     'name' => 'Name',
     'identity_number' => 'Identity Number',
@@ -45,6 +43,20 @@ return [
     'update' => 'Update',
     'active' => 'Active',
     'block' => 'Block',
+    'update_shipper' => 'Update Shipper',
+    'store_infor' => 'Store Information',
+    'open_at' => 'Open At',
+    'close_at' => 'Close At',
+
+    'manager_store' => 'Manager Store',
+    'manager_shipper' => 'Manager Shipper',
+    'manager_user' => 'Manager User',
+    'left_bar' => [
+        'user_list' => 'User List',
+        'store_list' => 'Store List',
+        'shipper_list' => 'Shipper List',
+        'register_shipper' => 'Register Shipper',
+    ],
 
     'message' => [
         'no_select' => 'You don\'t choose any record!',
@@ -71,6 +83,8 @@ return [
 
         'confirm_block_shipper' => 'Are you sure want to block this shipper?',
         'confirm_active_shipper' => 'Are you sure want to active this shipper?',
+        'confirm_block_store' => 'Are you sure want to block this store?',
+        'confirm_active_store' => 'Are you sure want to active this store?',
     ],
 
     'register_shipper_mail' => [

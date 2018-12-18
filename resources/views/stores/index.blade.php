@@ -52,7 +52,7 @@
                 <tr>
                     <td style="border: 1px solid #ddd !important;">
                         <label class="checkbox-wrap">
-                            <input type="checkbox" class="checkbox-element" name="checkbox1" value="{{ $store->id }}" />
+                            <input type="checkbox" class="checkbox-element" name="checkbox1" value="{{ $store->id }}" user="{{ $store->user_id }}"/>
                             <span class="checkmark"></span>
                         </label>
                     </td>
