@@ -4,7 +4,7 @@
 @section('content')
     <div class="panel form-element-padding">
         <div class="panel-heading">
-            <h4>@lang('lang.create_shipper')</h4>
+            <h4>@lang('lang.update_shipper')</h4>
         </div>
         {{ Form::open(['route' => ['shipper.update', $shipper->id], 'id' => 'form-shipper', 'method' => 'PUT']) }}
             <div class="panel-body content-block">

@@ -27,7 +27,6 @@ class StoreController extends Controller
 
             return view('stores.index', compact('stores'));
         } catch (Exception $e) {
-            dd($e);
             abort(404);
         }
     }
@@ -61,7 +60,14 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-        //
+        try {
+            $store = $this->storeRepository->getStoreDetail($id);
+            
+            return view('stores.show', compact('store'));
+        } catch (Exception $e) {
+            report($e);
+            abort(404);
+        }
     }
 
     /**

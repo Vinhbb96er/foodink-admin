@@ -34,7 +34,7 @@ class ShipperRepository extends BaseRepository implements ShipperInterface
 
     public function getShipperDetail($id)
     {
-        return $this->model->with('info')->find($id);
+        return $this->model->with('info')->findOrFail($id);
     }
 
     public function updateShipper($id, $shipperData, $userData)

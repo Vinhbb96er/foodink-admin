@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="form-group input-block">
-        <label class="col-sm-2 control-label text-right">@lang('lang.name')</label>
+        <label class="col-sm-2 control-label">@lang('lang.name')</label>
         <div class="col-sm-10">
             {{ Form::text('name', isset($shipper) ? $shipper->info->name : null, ['class' => 'form-control primary']) }}
             <div class="error-area">
@@ -11,7 +11,7 @@
 </div>
 <div class="col-md-12">
     <div class="form-group input-block">
-        <label class="col-sm-2 control-label text-right">@lang('lang.email')</label>
+        <label class="col-sm-2 control-label">@lang('lang.email')</label>
         <div class="col-sm-10">
             {{ Form::text('email', isset($shipper) ? $shipper->info->email : null, ['class' => 'form-control primary']) }}
             <div class="error-area">
@@ -22,7 +22,7 @@
 </div>
 <div class="col-md-12">
     <div class="form-group input-block">
-        <label class="col-sm-2 control-label text-right">@lang('lang.address')</label>
+        <label class="col-sm-2 control-label">@lang('lang.address')</label>
         <div class="col-sm-10">
             {{ Form::text('address', isset($shipper) ? $shipper->info->address : null, ['class' => 'form-control primary']) }}
             <div class="error-area">
@@ -33,7 +33,7 @@
 </div>
 <div class="col-md-12">
     <div class="form-group input-block">
-        <label class="col-sm-2 control-label text-right">@lang('lang.phone')</label>
+        <label class="col-sm-2 control-label">@lang('lang.phone')</label>
         <div class="col-sm-10">
             {{ Form::text('phone', isset($shipper) ? $shipper->info->phone : null, ['class' => 'form-control primary']) }}
             <div class="error-area">
@@ -44,7 +44,7 @@
 </div>
 <div class="col-md-12">
     <div class="form-group input-block">
-        <label class="col-sm-2 control-label text-right">@lang('lang.identity_number')</label>
+        <label class="col-sm-2 control-label">@lang('lang.identity_number')</label>
         <div class="col-sm-10">
             {{ Form::text('identity_number', isset($shipper) ? $shipper->identity_number : null, ['class' => 'form-control primary']) }}
             <div class="error-area">
@@ -56,7 +56,7 @@
 @isset ($shipper)
     <div class="col-md-12">
         <div class="form-group input-block">
-            <label class="col-sm-2 control-label text-right">@lang('lang.status')</label>
+            <label class="col-sm-2 control-label">@lang('lang.status')</label>
             <div class="col-sm-10">
                 <span class="status-label label-{{ $shipper->status }}">
                     {{ $shipper->status_text }}
