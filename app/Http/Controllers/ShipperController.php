@@ -139,7 +139,7 @@ class ShipperController extends Controller
         } catch (Exception $e) {
             report($e);
             DB::rollback();
-dd($e);
+
             return redirect()->back()->with('error', trans('lang.message.update_shipper_error'));
         }
     }

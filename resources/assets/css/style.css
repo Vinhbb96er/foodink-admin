@@ -6569,6 +6569,19 @@ ul li a:focus {
     background-color: #868686;
 }
 
+.status-label.shipper-label-0 {
+    background-color: #44bd44;
+}
+
+.status-label.shipper-label-1 {
+    background-color: #868686;
+}
+
+.no-result {
+    padding: 30px !important;
+    text-align: center;
+}
+
 /* LOADER */
 #process-loader {
     overflow: hidden !important;

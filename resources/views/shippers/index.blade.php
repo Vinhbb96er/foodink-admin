@@ -46,6 +46,7 @@
             <th>@lang('lang.shipper_name')</th>
             <th>@lang('lang.phone')</th>
             <th>@lang('lang.address')</th>
+            <th>@lang('lang.order_list')</th>
             <th>@lang('lang.status')</th>
           </tr>
         </thead>
@@ -58,12 +59,17 @@
                             <span class="checkmark"></span>
                         </label>
                     </td>
-                    <th>{{ $loop->iteration }}</th>
+                    <th class="text-center">{{ $loop->iteration }}</th>
                     <th>
                         <a href="{{ route('shipper.show', $shipper->id) }}">{{ $shipper->info->name }}</a>
                     </th>
                     <th>{{ $shipper->info->phone }}</th>
                     <th>{{ $shipper->info->address }}</th>
+                    <th class="text-center">
+                        <a href="{{ route('shipper-order.show', $shipper->id) }}">
+                            <span class="fa fa-eye"></span>
+                        </a>
+                    </th>
                     <th>
                         <span class="status-label label-{{ $shipper->status }}">
                             {{ $shipper->status_text }}
@@ -71,9 +77,9 @@
                     </th>
                 </tr>
             @empty
-                <tr colspans="5">
-                    <th>
-                        @lang('lang.no_results')
+                <tr>
+                    <th colspan="10" class="no-result">
+                        @lang('lang.no_result')
                     </th>
                 </tr>
             @endforelse

@@ -37,5 +37,10 @@ class RepositoryServiceProvider extends ServiceProvider
             'App\Repositories\Shipper\UserInterface',
             'App\Repositories\Shipper\UserRepository'
         );
+
+        $this->app->bind(
+            'App\Repositories\ShipperOrder\ShipperOrderInterface',
+            'App\Repositories\ShipperOrder\ShipperOrderRepository'
+        );
     }
 }

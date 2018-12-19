@@ -24,6 +24,13 @@ return [
         ],
     ],
 
+    'shipper_order' => [
+        'status' => [
+            'shipping' => 'Shipping',
+            'done' => 'Done',
+        ],
+    ],
+
     'block_all' => 'Block All',
     'active_all' => 'Active All',
     'no' => 'No.',
@@ -47,15 +54,23 @@ return [
     'store_infor' => 'Store Information',
     'open_at' => 'Open At',
     'close_at' => 'Close At',
+    'customer' => 'Customer',
+    'ship_cost' => 'Ship cost',
+    'total' => 'Total',
+    'order_list' => 'Order list',
+    'no_result' => 'No result',
+    'foodink_admin' => 'Foodink Admin',
 
     'manager_store' => 'Manager Store',
     'manager_shipper' => 'Manager Shipper',
+    'manager_shipper_order' => 'Manager Shipper Order',
     'manager_user' => 'Manager User',
     'left_bar' => [
         'user_list' => 'User List',
         'store_list' => 'Store List',
         'shipper_list' => 'Shipper List',
         'register_shipper' => 'Register Shipper',
+        'shipper_order_list' => 'Shipper Order List',
     ],
 
     'message' => [

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>@lang('lang.admin')</title>
+    <title>@lang('lang.foodink_admin')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{ Html::favicon( '/templates/admin/images/favicon.ico' ) }}
     {{ Html::style(asset('asset/css/bootstrap.min.css')) }}

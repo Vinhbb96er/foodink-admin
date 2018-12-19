@@ -70,8 +70,12 @@
                     </th>
                 </tr>
             @empty
+                <tr>
+                    <th colspan="10" class="no-result">
+                        @lang('lang.no_result')
+                    </th>
+                </tr>
             @endforelse
-          
         </tbody>
       </table>
       </div>
