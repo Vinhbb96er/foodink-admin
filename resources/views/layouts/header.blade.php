@@ -23,7 +23,7 @@
                 <span class="middle"></span>
                 <span class="bottom"></span>
               </div>
-                <a href="{{ route('home') }}" class="navbar-brand"> 
+                <a href="{{ route('store.index') }}" class="navbar-brand"> 
                  <b>Foodink Admin</b>
                 </a>
 
