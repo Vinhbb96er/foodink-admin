@@ -19,7 +19,7 @@ Route::group(['namespace' => 'Auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'HomeController@index')->name('home');
     
     Route::resource('store', 'StoreController');
     Route::resource('shipper', 'ShipperController');
