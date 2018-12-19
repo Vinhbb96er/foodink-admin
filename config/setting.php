@@ -22,5 +22,12 @@ return [
         'store_owner' => 2,
         'shipper' => 3,
         'customer' => 4,
+    ],
+
+    'shipper_order' => [
+        'status' => [
+            'shipping' => 0,
+            'done' => 1,
+        ]
     ]
 ];

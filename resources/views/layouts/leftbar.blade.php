@@ -32,6 +32,7 @@
           <ul class="nav nav-list tree">
             <li><a href="{{ route('shipper.index') }}">@lang('lang.left_bar.shipper_list')</a></li>
             <li><a href="{{ route('shipper.create') }}">@lang('lang.left_bar.register_shipper')</a></li>
+            <li><a href="{{ route('shipper-order.index') }}">@lang('lang.left_bar.shipper_order_list')</a></li>
           </ul>
         </li>
       </ul>

@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::resource('store', 'StoreController');
     Route::resource('shipper', 'ShipperController');
+    Route::resource('shipper-order', 'ShipperOrderController');
 });
 
 Route::group(['namespace' => 'Ajax'], function () {
